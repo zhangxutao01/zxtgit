@@ -1,0 +1,21 @@
+﻿ select  a.id from exam a where a.grade = 
+ (select b.grade from exam b where b.class='sybase' and id='zhying') and a.class='sybase'
+ select a.id  from exam a inner join exam b on
+ a.id=b.id where b.class='sybase' and b.id='zhying' and a.grade=b.grade
+ select a.id  from exam a inner join exam b on
+ a.id=b.id where b.class='sybase' and b.id='zhying' and a.grade=b.grade
+ select *  from(
+select a.id,avg(a.grade) 平均分  from exam a group by a.id) b where rownum <=3  order by b.平均分 desc
+select * from (
+select a.id,avg(a.grade) 平均分  from exam a  group by a.id) where 平均分>85
+select a.name,c.*  from 
+staff a inner join test_dept b 
+on a.id=b.id 
+right join exam c
+on a.id=c.id
+where a.working_months<12 and c.class='sybase'
+select * from(
+select * from STAFF a  order by a.working_months)where rownum<=10
+minus
+select * from(
+select * from STAFF b order by b.working_months)where rownum<6 
