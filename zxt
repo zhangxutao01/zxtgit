@@ -1,1 +1,8 @@
-111111
+v_db_xtypt_t_message_c_sjbs :=(SELECT c_sjbs from db_yw.t_sjjr_task OFFSET 20000 LIMIT 1);
+v_db_xtypt_t_message_c_bh_fsf = SELECT c_fsf_corpid from db_yw.t_sjjr_task where c_sjbs = v_db_xtypt_t_message_c_sjbs 
+v_db_xtypt_t_message_c_bh_jsf = SELECT c_jsf_corpid from db_yw.t_sjjr_task where c_sjbs = v_db_xtypt_t_message_c_sjbs
+v_db_xtypt_t_message_c_jdbh = SELECT c_stage_id from db_yw.t_sjjr_task where c_sjbs = v_db_xtypt_t_message_c_sjbs
+
+v_db_xtypt_t_message_c_dwlx_fsf = SELECT c_fsfdwlx from db.xtgj_temp01 where c_jdbh = v_db_xtypt_t_message_c_jdbh
+v_db_xtypt_t_message_c_dwlx_jsf = SELECT c_jsfdwlx from db.xtgj_temp01 where c_jdbh = v_db_xtypt_t_message_c_jdbh
+v_db_xtypt_t_message_c_pttyah = SELECT c_tyfh from db_yw.t_sjjr_task c_sjbs = v_db_xtypt_t_message_c_sjbs 
